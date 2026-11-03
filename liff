@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My LIFF</title>
+</head>
+<body>
+  <h1 id="name">กำลังโหลด...</h1>
+  <img id="pic" width="100">
+
+  <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+  <script>
+    async function main() {
+      await liff.init({ liffId: "YOUR_LIFF_ID" });
+      if (!liff.isLoggedIn()) { liff.login(); return; }
+      const p = await liff.getProfile();
+      document.getElementById("name").textContent = "สวัสดี " + p.displayName;
+      document.getElementById("pic").src = p.pictureUrl;
+    }
+    main();
+  </script>
+</body>
+</html>
