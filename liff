@@ -12,7 +12,7 @@
   <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
   <script>
     async function main() {
-      await liff.init({ liffId: "YOUR_LIFF_ID" });
+      await liff.init({ liffId: "2012352646-BDbfmRq1" });
       if (!liff.isLoggedIn()) { liff.login(); return; }
       const p = await liff.getProfile();
       document.getElementById("name").textContent = "สวัสดี " + p.displayName;
